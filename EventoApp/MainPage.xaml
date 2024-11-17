@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="EventoApp.MainPage"
+             Title="Cadastro de Evento">
+
+  <ContentPage.Background>
+        <!-- Definindo o fundo com um LinearGradientBrush -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="Black" Offset="0" />
+            <GradientStop Color="#800080" Offset="1" /> <!-- Roxo -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <Label Text="Cadastro de Evento" FontSize="24" HorizontalOptions="Center" FontFamily="DeliusSwashCaps-Regular" TextColor="Pink" />
+
+            <Entry x:Name="NomeEntry" Placeholder="Nome do evento" FontFamily="DeliusSwashCaps-Regular" TextColor="Pink"/>
+
+            <!-- Data de Início -->
+            <DatePicker x:Name="DataInicioPicker" Date="{Binding DataInicio}" />
+
+            <!-- Data de Término -->
+            <DatePicker x:Name="DataTerminoPicker" Date="{Binding DataTermino}" />
+
+            <Entry x:Name="NumeroParticipantesEntry" Placeholder="Número de Participantes" Keyboard="Numeric" TextColor="Pink" />
+
+            <Entry x:Name="LocalEntry" Placeholder="Local do Evento" TextColor="Pink" FontFamily="DeliusSwashCaps-Regular" />
+
+            <!-- Entrada para o custo por participante -->
+            <Entry x:Name="CustoEntry" Placeholder="Custo por Participante" Keyboard="Numeric" TextColor="Pink"/>
+
+            <Button Text="Cadastrar Evento" Clicked="OnCadastrarEventoClicked"  WidthRequest="200" 
+                    HeightRequest="50" TextColor="Pink"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
+
+
